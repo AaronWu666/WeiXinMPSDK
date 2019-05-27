@@ -191,7 +191,6 @@ namespace Senparc.Weixin.WxOpen
 
         #endregion
 
-
         #region 异步方法
 
         /// <summary>
@@ -224,7 +223,7 @@ namespace Senparc.Weixin.WxOpen
                     accessTokenContainer_GetAccessTokenResultAsyncFunc,
                     invalidCredentialValue,
                     fun, accessTokenOrAppId, retryIfFaild);
-            return await result;
+            return await result.ConfigureAwait(false);
         }
 
         #region 淘汰方法
