@@ -128,7 +128,7 @@ namespace Senparc.Weixin.Sample.NetCore3
             app.UseEndpoints(endpoints =>
             {
                 //配置自定义 SenparcHub
-                endpoints.MapHub<SenparcHub>("/senparcHub");
+                endpoints.MapHub<SenparcHub>("/SenparcHub");
             });                                                                                  // DPBMARK_END
 
 
@@ -342,7 +342,8 @@ namespace Senparc.Weixin.Sample.NetCore3
                     #endregion
                 });
 
-            #region 使用 MessageHadler 中间件，取代 创建Controller
+            #region 使用 MessageHadler 中间件，用于取代创建独立的 Controller
+            //MessageHandler 中间件介绍：https://www.cnblogs.com/szw/p/Wechat-MessageHandler-Middleware.html
 
             //使用公众号的 MessageHandler 中间件（不再需要创建 Controller）                       --DPBMARK MP
             app.UseMessageHandlerForMp("/WeixinAsync", CustomMessageHandler.GenerateMessageHandler, options =>
