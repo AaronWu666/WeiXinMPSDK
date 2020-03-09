@@ -1,5 +1,5 @@
 ﻿/*----------------------------------------------------------------
-    Copyright (C) 2019 Senparc
+    Copyright (C) 2020 Senparc
     
     文件名：WorkMessageHandler.cs
     文件功能描述：企业号请求的集中处理方法
@@ -188,7 +188,7 @@ namespace Senparc.Weixin.Work.MessageHandlers
             _postModel = postModel as PostModel ?? new PostModel();
 
 
-            UsingEcryptMessage = true;//Work中消息都是强制加密的
+            UsingEncryptMessage = true;//Work中消息都是强制加密的
             var postDataStr = postDataDocument.ToString();
             EncryptPostData = RequestMessageFactory.GetEncryptPostData(postDataStr);
 
