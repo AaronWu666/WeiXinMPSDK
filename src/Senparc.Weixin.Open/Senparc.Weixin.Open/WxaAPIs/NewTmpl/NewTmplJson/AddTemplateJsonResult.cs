@@ -1,7 +1,7 @@
 ﻿#region Apache License Version 2.0
 /*----------------------------------------------------------------
 
-Copyright 2020 Jeffrey Su & Suzhou Senparc Network Technology Co.,Ltd.
+Copyright 2017 Jeffrey Su & Suzhou Senparc Network Technology Co.,Ltd.
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file
 except in compliance with the License. You may obtain a copy of the License at
@@ -19,35 +19,33 @@ Detail: https://github.com/JeffreySu/WeiXinMPSDK/blob/master/license.md
 #endregion Apache License Version 2.0
 
 /*----------------------------------------------------------------
-    Copyright (C) 2020 Senparc
+    Copyright (C) 2017 Senparc
     
-    文件名：SubscribeMsgTemplateModel.cs
-    文件功能描述：模板消息接口需要的数据
+    文件名：AddJsonResult.cs
+    文件功能描述：“获取模板库某个模板标题下关键词库”接口：Add 结果
     
     
-    创建标识：Senparc - 20180211
-    
+    创建标识：Senparc - 20170827
+
 ----------------------------------------------------------------*/
 
-namespace Senparc.Weixin.MP.AdvancedAPIs.TemplateMessage
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Senparc.Weixin.Entities;
+
+namespace Senparc.Weixin.Open.WxaAPIs.NewTmpl.NewTmplJson
 {
     /// <summary>
-    /// 一次性订阅消息模板
+    /// “组合模板并添加至帐号下的个人模板库”接口：AddTemplate 结果
     /// </summary>
-    public class SubscribeMsgTemplateModel: TemplateModel
+    public class AddTemplateJsonResult : WxJsonResult
     {
         /// <summary>
-        /// 消息标题，15字以内
+        /// 添加至帐号下的模板id，发送小程序模板消息时所需
         /// </summary>
-        public string title { get; set; }
-
-        /// <summary>
-        /// （必填）订阅场景值
-        /// </summary>
-        public string scene { get; set; }
-
-        public SubscribeMsgTemplateModel() : base()
-        {
-        }
+        public string priTmplId { get; set; }
     }
 }
